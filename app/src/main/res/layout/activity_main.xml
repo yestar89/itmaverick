@@ -25,7 +25,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/pretendard_medium"
         tools:ignore="DuplicateIds,MissingConstraints" />
-    <?xml version="1.0" encoding="utf-8"?>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,7 +34,7 @@
         tools:layout_editor_absoluteY="102dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imgUser"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -53,12 +53,12 @@
             android:fontFamily="@font/pretendard_medium"
             android:text="김모팁 LV.1"
             android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintStart_toEndOf="@id/imgUser"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="DuplicateIds" />
 
         <TextView
-            android:id="@+id/hp_under"
+            android:id="@+id/hp_under_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -67,7 +67,7 @@
             android:text="오늘의 갓생 시간"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imgUser"
             tools:ignore="DuplicateIds,MissingConstraints" />
 
         <ProgressBar
@@ -123,7 +123,7 @@
                         android:layout_height="178dp"
                         android:layout_marginTop="2dp"
                         android:layout_marginEnd="2dp"
-                        android:background="@drawable/got_bt.xml"
+                        android:background="@drawable/got_bt"
                         android:drawableTop="@drawable/profile" />
 
                     <TextView
@@ -151,10 +151,10 @@
                         android:layout_marginTop="2dp"
                         android:layout_marginEnd="2dp"
                         android:drawableTop="@drawable/profile"
-                        android:background="@drawable/got_bt.xml" />
+                        android:background="@drawable/got_bt" />
 
                     <TextView
-                        android:id="@+id/person1"
+                        android:id="@+id/person2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/pretendard_semibold"
