@@ -7,12 +7,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
+import com.google.android.gms.auth.api.identity.Identity;
+import com.google.android.gms.auth.api.identity.SignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApi;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -24,9 +32,13 @@ public class Signin extends AppCompatActivity {
     TextView textView;
     TextInputEditText editTextEmail, editTextPassword, confirmPassword;
     Button buttonLogin;
-    FirebaseAuth mAuth;
-    ProgressBar progressBar;
 
+    ProgressBar progressBar;
+    SignInButton googleLog;
+    FirebaseAuth mAuth;
+
+    private SignInClient oneTapClient;
+    private BeginSignInRequest signInRequest;
     @Override
     public void onStart() {
         super.onStart();
@@ -48,6 +60,7 @@ public class Signin extends AppCompatActivity {
         buttonLogin = findViewById(R.id.btn_sign);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.nowSignup);
+        googleLog = findViewById(R.id.btn_google);
 
 
         textView.setOnClickListener(new View.OnClickListener() {
@@ -71,11 +84,15 @@ public class Signin extends AppCompatActivity {
                 if (TextUtils.isEmpty(sign_id)){
                     Toast.makeText(Signin.this, "이메일을 입력하세요.", Toast.LENGTH_SHORT).show();
                     return;
+                } if (!Patterns.EMAIL_ADDRESS.matcher(sign_id).matches()) {
+                    Toast.makeText(Signin.this, "올바른 이메일 형식이 아닙니다.", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 if (TextUtils.isEmpty(sign_pass)){
                     Toast.makeText(Signin.this, "비밀번호를 입력하세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
 
                 mAuth.signInWithEmailAndPassword(sign_id, sign_pass)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -95,5 +112,25 @@ public class Signin extends AppCompatActivity {
                         });
             }
         });
+
+        oneTapClient = Identity.getSignInClient(this);
+        signInRequest = BeginSignInRequest.builder()
+                .setPasswordRequestOptions(BeginSignInRequest.PasswordRequestOptions.builder()
+                        .setSupported(true)
+                        .build())
+                .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
+                        .setSupported(true)
+                        // Your server's client ID, not your Android client ID.
+                        .setServerClientId(getString(R.string.default_web_client_id))
+                        // Only show accounts previously used to sign in.
+                        .setFilterByAuthorizedAccounts(true)
+                        .build())
+                // Automatically sign in when exactly one credential is retrieved.
+                .setAutoSelectEnabled(true)
+                .build();
+
+
+
+
     }
 }

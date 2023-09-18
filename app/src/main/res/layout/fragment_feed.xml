@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Feed">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fd_pop"
+        android:layout_width="103dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/feed_tab_style"
+        android:text="인기"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fd_realtime"
+        android:layout_width="103dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/feed_untab_style"
+        android:text="실시간"
+        android:textColor="#636262"
+        app:layout_constraintStart_toEndOf="@+id/fd_pop"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fd_mypost"
+        android:layout_width="103dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/feed_untab_style"
+        android:text="내글"
+        android:textColor="#636262"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fd_realtime"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@+id/fd_mypost">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/goPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="700dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/square"
+        android:text="글쓰기" />
+
+
+</RelativeLayout>

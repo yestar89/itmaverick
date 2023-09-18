@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.ClubFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!-- 상단바 -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bar"
+        android:background="@color/white"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/white"
+        android:elevation="1dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="클럽"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+        <!-- 상단바 내용 (제목 등) 추가 가능 -->
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 탭바 -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="66dp"
+        android:background="@color/white"
+        android:elevation="1dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/icon_selected">
+
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <!-- 프래그먼트를 담을 container -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:saveEnabled="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+
+
+
+
+</RelativeLayout>
+
+
+
+
+
