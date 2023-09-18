@@ -1,6 +1,8 @@
 package kr.co.company.it_maverick.Model;
 
 public class Post {
+    public Post() {
+    }
     private String postid;
     private String username;
     private String userimage;
@@ -25,8 +27,7 @@ public class Post {
         this.userimage = userimage;
     }
 
-    public Post() {
-    }
+
     public String getUsername() {
         return username;
     }

@@ -1,4 +1,4 @@
-package kr.co.company.it_maverick;
+package kr.co.company.it_maverick.Sign;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +23,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.regex.Pattern;
+
+import kr.co.company.it_maverick.MainActivity;
+import kr.co.company.it_maverick.R;
 
 public class Signup extends AppCompatActivity {
     private static final Pattern PASSWORD_PATTERN =

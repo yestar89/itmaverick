@@ -20,17 +20,15 @@
         <activity
             android:name=".PostActivity"
             android:exported="true" />
+
         <activity
-            android:name=".fragment_feed"
-            android:exported="false" />
-        <activity
-            android:name=".setprofile"
+            android:name=".Sign.setprofile"
             android:exported="true" />
         <activity
-            android:name=".UserVerification"
+            android:name=".Sign.UserVerification"
             android:exported="false" />
         <activity
-            android:name=".Signin"
+            android:name=".Sign.Signin"
             android:exported="true"
             android:theme="@style/Theme.IT_Maverick.NoActionBar">
             <intent-filter>
@@ -40,19 +38,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".main_goal"
-            android:exported="false"
-            android:label="@string/title_activity_main_goal"
-            android:theme="@style/Theme.IT_Maverick.NoActionBar" />
-        <activity
-            android:name=".Signup"
+            android:name=".Sign.Signup"
             android:exported="true"
             android:theme="@style/Theme.IT_Maverick.NoActionBar" />
-        <activity
-            android:name=".main_home"
-            android:exported="false"
-            android:label="@string/title_activity_main_home"
-            android:theme="@style/Theme.IT_Maverick.NoActionBar" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,4 +1,4 @@
-package kr.co.company.it_maverick;
+package kr.co.company.it_maverick.Club;
 
 import androidx.fragment.app.Fragment;
 

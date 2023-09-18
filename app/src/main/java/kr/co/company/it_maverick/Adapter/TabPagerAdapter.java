@@ -4,10 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import kr.co.company.it_maverick.DiaryFragment;
+import kr.co.company.it_maverick.Club.DiaryFragment;
 import kr.co.company.it_maverick.Fragment.ClubFragment;
 import kr.co.company.it_maverick.Fragment.FeedFragment;
-import kr.co.company.it_maverick.ProFragment;
+import kr.co.company.it_maverick.Club.ProFragment;
 
 public class TabPagerAdapter extends FragmentStateAdapter {
 

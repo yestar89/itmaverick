@@ -1,4 +1,4 @@
-package kr.co.company.it_maverick;
+package kr.co.company.it_maverick.Sign;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -17,16 +16,16 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.Identity;
 import com.google.android.gms.auth.api.identity.SignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.GoogleApi;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import kr.co.company.it_maverick.MainActivity;
+import kr.co.company.it_maverick.R;
 
 public class Signin extends AppCompatActivity {
     TextView textView;
@@ -60,7 +59,7 @@ public class Signin extends AppCompatActivity {
         buttonLogin = findViewById(R.id.btn_sign);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.nowSignup);
-        googleLog = findViewById(R.id.btn_google);
+        
 
 
         textView.setOnClickListener(new View.OnClickListener() {

@@ -6,11 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,17 +22,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import kr.co.company.it_maverick.Adapter.PostAdapter;
-import kr.co.company.it_maverick.MainActivity;
 import kr.co.company.it_maverick.Model.Post;
-import kr.co.company.it_maverick.Model.User;
 import kr.co.company.it_maverick.PostActivity;
 import kr.co.company.it_maverick.R;
-import kr.co.company.it_maverick.Signin;
 
 public class FeedFragment extends Fragment {
+    private static final String TAG = "FeedFragment";
     private PostAdapter postAdapter;
     //private List<Post> postLists;
 
@@ -49,6 +47,7 @@ public class FeedFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_feed, container, false);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        Log.d(TAG, "post: add 확인: ");
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -68,14 +67,14 @@ public class FeedFragment extends Fragment {
 
         postLists = new ArrayList<>();
         //userLists = new ArrayList<>();
-        postAdapter = new PostAdapter(getContext(), postLists);
-        recyclerView.setAdapter(postAdapter);
+
 
         goPost = view.findViewById(R.id.goPost);
 
 
         database = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = database.getReference("noTimeFeed");
+        DatabaseReference databaseReference = database.getReference("Posts").child("noTimeFeed")
+                .child("Post1");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -108,12 +107,19 @@ public class FeedFragment extends Fragment {
 
         //readPosts();
 
+        postAdapter = new PostAdapter(getContext(), postLists);
+        recyclerView.setAdapter(postAdapter);
+
         return view;
 
 
 
     }
+
+
+
 }
+
 
 
 

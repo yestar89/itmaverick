@@ -1,10 +1,12 @@
-package kr.co.company.it_maverick;
+package kr.co.company.it_maverick.Club;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import kr.co.company.it_maverick.R;
 
 /**
  * A simple {@link Fragment} subclass.

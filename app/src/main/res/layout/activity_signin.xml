@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Signin">
+    tools:context=".Sign.Signin">
   <!-- motive 로고 -->
   <ImageView
       android:id="@+id/imageView"
@@ -18,7 +18,7 @@
       app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@drawable/img" />
+      app:srcCompat="@drawable/motive" />
 
   <!--로그인 버튼-->
   <Button
@@ -29,9 +29,10 @@
       android:layout_marginEnd="20dp"
       android:background="#b0b0b0"
       android:text="로그인"
+      android:layout_marginTop="40dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/mem_id_check" />
+      app:layout_constraintTop_toBottomOf="@+id/sign_pass" />
   <!-- 회원가입-->
   <TextView
       android:id="@+id/nowSignup"
@@ -51,29 +52,29 @@
 
   <!--비밀번호 찾기-->
 
-  <TextView
-      android:id="@+id/findID"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="91dp"
-      android:layout_marginTop="17dp"
-      android:text="아이디 찾기"
-      android:textColor="#979797"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/btn_sign" />
+<!--  <TextView-->
+<!--      android:id="@+id/findID"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_marginStart="91dp"-->
+<!--      android:layout_marginTop="17dp"-->
+<!--      android:text="아이디 찾기"-->
+<!--      android:textColor="#979797"-->
+<!--      app:layout_constraintStart_toStartOf="parent"-->
+<!--      app:layout_constraintTop_toBottomOf="@+id/btn_sign" />-->
 
-  <!-- 비밀번호 제목 -->
-  <TextView
-      android:id="@+id/findPW"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="80dp"
-      android:text="비밀번호 찾기"
-      android:layout_marginTop="17dp"
-      android:layout_marginEnd="90dp"
-      android:textColor="#979797"
-      app:layout_constraintStart_toEndOf="@+id/findID"
-      app:layout_constraintTop_toBottomOf="@+id/btn_sign" />
+<!--  &lt;!&ndash; 비밀번호 제목 &ndash;&gt;-->
+<!--  <TextView-->
+<!--      android:id="@+id/findPW"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_marginStart="80dp"-->
+<!--      android:text="비밀번호 찾기"-->
+<!--      android:layout_marginTop="17dp"-->
+<!--      android:layout_marginEnd="90dp"-->
+<!--      android:textColor="#979797"-->
+<!--      app:layout_constraintStart_toEndOf="@+id/findID"-->
+<!--      app:layout_constraintTop_toBottomOf="@+id/btn_sign" />-->
 
   <TextView
       android:layout_width="wrap_content"
@@ -119,7 +120,7 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/imageView"
       tools:ignore="MissingConstraints"
-      tools:text="아이디" />
+      tools:text="아이디"/>
 
   <!--아이디 작성란 -->
   <com.google.android.material.textfield.TextInputEditText
@@ -148,25 +149,7 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-  <CheckBox
-      android:id="@+id/mem_id_check"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="20dp"
-      android:layout_marginTop="20dp"
-      android:button="@drawable/icon_check_off"
-      android:text="자동 로그인"
-      android:textSize="12sp"
-      android:textStyle="bold"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/sign_pass" />
 
-  <com.google.android.gms.common.SignInButton
-      android:id="@+id/btn_google"
-      android:layout_width="150dp"
-      android:layout_height="50dp"
-      android:layout_marginStart="120dp"
-      android:layout_marginTop="60dp"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/btn_sign"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

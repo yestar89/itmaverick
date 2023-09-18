@@ -3,6 +3,8 @@ package kr.co.company.it_maverick;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import kr.co.company.it_maverick.Fragment.ClubFragment;
+import kr.co.company.it_maverick.Fragment.FeedFragment;
 import kr.co.company.it_maverick.Fragment.GoalFragment;
 import kr.co.company.it_maverick.Fragment.HomeFragment;
 import kr.co.company.it_maverick.Fragment.ProfileFragment;
@@ -39,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         clubFragment = new ClubFragment();
         watchFragment = new WatchFragment();
         profileFragment = new ProfileFragment();
+
+
+
 
 
 //        goSign = findViewById(R.id.logout);
