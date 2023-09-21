@@ -39,7 +39,7 @@ public class ClubFragment extends Fragment {
         tabLayout = rootView.findViewById(R.id.tabs);
 
 
-        adapter = new TabPagerAdapter(this);
+        adapter = new TabPagerAdapter(getActivity());
 
         viewPager.setAdapter(adapter);
         // TabLayout과 ViewPager2를 연결

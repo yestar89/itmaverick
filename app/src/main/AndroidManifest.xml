@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -18,9 +18,32 @@
         android:theme="@style/Theme.IT_Maverick"
         tools:targetApi="31">
         <activity
+            android:name=".intentAct.TivcherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intentAct.DiaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intentAct.FeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intentAct.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intentAct.WatchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intentAct.GoalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intentAct.ClubActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intentAct.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".PostActivity"
             android:exported="true" />
-
         <activity
             android:name=".Sign.setprofile"
             android:exported="true" />
@@ -41,13 +64,13 @@
             android:name=".Sign.Signup"
             android:exported="true"
             android:theme="@style/Theme.IT_Maverick.NoActionBar" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.IT_Maverick.NoActionBar" />
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
     </application>
 
 </manifest>

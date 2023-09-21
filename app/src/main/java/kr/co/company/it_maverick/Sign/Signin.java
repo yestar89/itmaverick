@@ -59,7 +59,7 @@ public class Signin extends AppCompatActivity {
         buttonLogin = findViewById(R.id.btn_sign);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.nowSignup);
-        
+
 
 
         textView.setOnClickListener(new View.OnClickListener() {

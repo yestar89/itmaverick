@@ -7,18 +7,12 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -41,13 +35,11 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.yalantis.ucrop.view.CropImageView;
 
 import java.util.HashMap;
 
 import kr.co.company.it_maverick.Fragment.ClubFragment;
-import kr.co.company.it_maverick.Fragment.FeedFragment;
-import kr.co.company.it_maverick.databinding.FragmentFeedBinding;
+import kr.co.company.it_maverick.Club.FeedFragment;
 
 public class PostActivity extends AppCompatActivity {
 
